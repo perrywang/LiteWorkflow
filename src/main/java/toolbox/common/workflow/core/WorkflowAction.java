@@ -8,5 +8,9 @@ public interface WorkflowAction {
     
     String getDescription();
     
-    <T> void execute(ExecutionContext<T> context);
+    default <T> void execute(ExecutionContext<T> context) {
+        execute(context, false);
+    }
+    
+    <T> void execute(ExecutionContext<T> context, boolean asynchronize);
 }
