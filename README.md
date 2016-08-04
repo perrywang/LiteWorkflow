@@ -11,5 +11,5 @@ Lightweight event driven workflow execution engine.
 **WorkflowExecution** An instance for workflow running  
 **ExecutionContext\<T\>** running context to relate data and state transfer between whole execution lifecycle. Type \<T\> is used to describe data type  
 **Event** workflow execution event such as **WorkflowStartingEvent**, **WorkflowStartedEvent**, **WorkflowPhaseEnteringEvent**, **WorkflowPhaseEnteredEvent**  
-**EventBus** event pub sub system to decouple workflow execution process   
+**EventBus** event pub sub system to decouple workflow action execution process   
 **ExecutionEngine** is the driver to trigger event on execution and other tasks such as providing if concurrent execution strategy
