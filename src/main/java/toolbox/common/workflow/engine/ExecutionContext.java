@@ -1,12 +1,14 @@
 package toolbox.common.workflow.engine;
 
-import com.hpe.sm.workflow.entity.WorkflowExecution;
+import javax.script.ScriptEngine;
 
 public interface ExecutionContext<T> {
     
     T getDocument();
     
     void setDocument(T document);
+    
+    ScriptEngine getScriptEngine();
     
     WorkflowExecution getExecution();
     

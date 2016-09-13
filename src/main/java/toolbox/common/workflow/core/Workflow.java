@@ -1,16 +1,10 @@
 package toolbox.common.workflow.core;
 
-public interface Workflow {
+public interface Workflow extends Describable {
     
-    String getName();
+    WorkflowPhase addPhase(String name, String description);
     
-    String getDescription();
+    void addTransition(WorkflowPhase from, WorkflowPhase to, String name, String description, TransitionCondition condition);
     
-    void addPhase();
-    
-    void addTransition(WorkflowTransition transition);
-    
-    void addTransition(WorkflowPhase from, Workflow to);
-    
-    void addAction(WorkflowAction action, Lifecycle lifecycle);
+    void addAction(WorkflowAction action, ActionLifecycle lifecycle, boolean isAsync);
 }

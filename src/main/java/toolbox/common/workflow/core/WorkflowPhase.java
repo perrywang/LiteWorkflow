@@ -2,15 +2,9 @@ package toolbox.common.workflow.core;
 
 import java.util.List;
 
-public interface WorkflowPhase {
+public interface WorkflowPhase extends Describable {
     
-    String getName();
+    List<WorkflowAction> getActions(ActionLifecycle lifecycle);
     
-    String getDescription();
-    
-    List<WorkflowAction> getActions();
-    
-    void addAction();
-    
-    void addAction(WorkflowAction action, Lifecycle lifecycle);
+    void addAction(WorkflowAction action, ActionLifecycle lifecycle);
 }
