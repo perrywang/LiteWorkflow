@@ -1,7 +1,5 @@
 package toolbox.common.workflow.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -26,11 +24,6 @@ public class PhaseEntity extends DescribableEntity implements WorkflowPhase {
     
     public PhaseEntity(Long id) {
         super(id);
-    }
-
-    @Override
-    public List<WorkflowAction> getActions(ActionLifecycle lifecycle) {
-        return RepositoryRegistry.instance().getActionRepository().findByPhaseAndLifecycle(this, lifecycle);
     }
 
     @Override

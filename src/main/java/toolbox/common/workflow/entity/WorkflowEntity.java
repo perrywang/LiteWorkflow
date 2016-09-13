@@ -1,7 +1,5 @@
 package toolbox.common.workflow.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 
 import lombok.Data;
@@ -50,11 +48,6 @@ public class WorkflowEntity extends DescribableEntity implements Workflow {
         transition.setTo((PhaseEntity)to);
         transition.setCondition(new TransitionConditionVO(condition.getExpression()));
         RepositoryRegistry.instance().getTransitionRepository().save(transition);
-    }
-
-    @Override
-    public List<WorkflowAction> getActions(ActionLifecycle lifecycle) {
-        return RepositoryRegistry.instance().getActionRepository().findByWorkflowAndLifecycle(this, lifecycle);
     }
 
 }

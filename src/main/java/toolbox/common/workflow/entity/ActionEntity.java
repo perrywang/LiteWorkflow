@@ -20,12 +20,12 @@ public class ActionEntity extends DescribableEntity implements WorkflowAction {
     @ManyToOne
     private WorkflowEntity workflow;
     
+    @ManyToOne
+    private PhaseEntity phase;
+    
     private ActionLifecycle lifecycle;
     
     private boolean isAsync = false;
-    
-    @ManyToOne
-    private PhaseEntity phase;
     
     public ActionEntity(Long id) {
         super(id);
