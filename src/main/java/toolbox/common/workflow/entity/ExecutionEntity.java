@@ -19,8 +19,15 @@ public class ExecutionEntity extends Persistable implements WorkflowExecution {
     @ManyToOne
     private PhaseEntity currentPhase;
     
+    @ManyToOne
+    private WorkflowEntity workflow;
+    
     public ExecutionEntity(Long id) {
         super(id);
+    }
+    
+    public ExecutionEntity(WorkflowEntity workflow) {
+        this.workflow = workflow;
     }
     
 }
