@@ -18,7 +18,7 @@ import toolbox.common.workflow.engine.scripting.ScriptEngineFactory;
 /**
  * 
  * @author pengwang
- * Using json format as workflow active record presentation
+ * Using json format as workflow running context presentation
  *
  */
 
@@ -48,15 +48,17 @@ public class SimpleExecutionContext implements ExecutionContext {
     private void bindScritEngine(JsonNode context) {
         this.scriptEngine = ScriptEngineFactory.createEngine();
         if(context != null) {
-            String dataJson = context.get("data").asText();
-            ObjectMapper om = new ObjectMapper();
-            try{
-                ActiveRecord activeRecord = om.readValue(dataJson, ActiveRecord.class);
-                scriptEngine.put("record", activeRecord);
-            }catch(IOException e){
-                log.warn("no binding for variable record");
+            JsonNode dataNode = context.get("data");
+            if(dataNode != null) {
+                String dataJson = context.get("data").asText();
+                ObjectMapper om = new ObjectMapper();
+                try{
+                    ActiveRecord activeRecord = om.readValue(dataJson, ActiveRecord.class);
+                    scriptEngine.put("record", activeRecord);
+                }catch(IOException e){
+                    log.warn("execution has no binding for variable record");
+                }
             }
-            
         }
     }
 
