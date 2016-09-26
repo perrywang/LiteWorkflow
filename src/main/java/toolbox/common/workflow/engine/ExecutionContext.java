@@ -2,9 +2,13 @@ package toolbox.common.workflow.engine;
 
 import javax.script.ScriptEngine;
 
-public interface ExecutionContext<T> {
+import toolbox.common.workflow.engine.scripting.ActiveRecord;
+
+public interface ExecutionContext {
     
-    T getData();
+    ActiveRecord getActiveRecord();
+    
+    ExecutionContext getParentContext();
     
     ScriptEngine getScriptEngine();
     

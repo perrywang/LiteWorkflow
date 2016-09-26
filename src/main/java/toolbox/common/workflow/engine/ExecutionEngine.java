@@ -6,10 +6,10 @@ import toolbox.common.workflow.core.WorkflowTransition;
 
 public interface ExecutionEngine {
     
-    <T> void startWorkflow(Workflow workflow, ExecutionContext<T> context);
+    void startWorkflow(Workflow workflow, ExecutionContext context);
     
-    <T> void doTransition(WorkflowExecution execution, WorkflowTransition transition, ExecutionContext<T> context);
+    void doTransition(WorkflowExecution execution, WorkflowTransition transition, ExecutionContext context);
     
-    <T> void doAction(WorkflowExecution execution, WorkflowAction action, ExecutionContext<T> context);
+    void doAction(WorkflowExecution execution, WorkflowAction action, ExecutionContext context);
 
 }

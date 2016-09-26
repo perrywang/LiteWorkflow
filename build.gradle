@@ -3,6 +3,9 @@ buildscript {
 		springBootVersion = '1.4.0.RELEASE'
 	}
 	repositories {
+	    maven {
+            url "http://repo1.maven.org/maven2/"
+        }
 		mavenCentral()
 	}
 	dependencies {
@@ -22,6 +25,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+    maven {
+        url "http://repo1.maven.org/maven2/"
+    }
 	mavenCentral()
 }
 
@@ -30,6 +36,7 @@ dependencies {
 	compile('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('com.fasterxml.jackson.core:jackson-databind:2.8.3')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

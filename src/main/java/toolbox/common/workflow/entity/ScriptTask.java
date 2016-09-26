@@ -20,7 +20,7 @@ public class ScriptTask extends TaskEntity {
     }
 
     @Override
-    public boolean execute(ExecutionContext<?> context) {
+    public boolean execute(ExecutionContext context) {
         return false;
     }
 

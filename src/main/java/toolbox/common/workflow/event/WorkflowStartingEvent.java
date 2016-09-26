@@ -11,7 +11,7 @@ public class WorkflowStartingEvent extends WorkflowEvent {
     
     private Workflow workflow;
     
-    public WorkflowStartingEvent(ExecutionContext<?> context, Workflow starting) {
+    public WorkflowStartingEvent(ExecutionContext context, Workflow starting) {
         super(context);
         this.workflow = starting;
     }

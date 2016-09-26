@@ -6,5 +6,5 @@ public interface TransitionCondition {
     
     String getExpression();
     
-    <T> boolean evaluate(ExecutionContext<T> context);
+    boolean evaluate(ExecutionContext context);
 }

@@ -17,7 +17,7 @@ public class TransitionConditionVO implements TransitionCondition {
     }
 
     @Override
-    public <T> boolean evaluate(ExecutionContext<T> context) {
+    public boolean evaluate(ExecutionContext context) {
         // TODO Auto-generated method stub
         return false;
     }
