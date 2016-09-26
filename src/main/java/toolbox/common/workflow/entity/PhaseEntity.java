@@ -33,5 +33,9 @@ public class PhaseEntity extends DescribableEntity implements WorkflowPhase {
         actionEntity.setAsync(isAsync);
         RepositoryRegistry.instance().getActionRepository().save(actionEntity); 
     }
+    
+    public PhaseEntity(String name, String description) {
+        super(name,description);
+    }
 
 }

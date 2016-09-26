@@ -4,9 +4,7 @@ import javax.script.ScriptEngine;
 
 public interface ExecutionContext<T> {
     
-    T getDocument();
-    
-    void setDocument(T document);
+    T getData();
     
     ScriptEngine getScriptEngine();
     
