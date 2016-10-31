@@ -19,4 +19,4 @@ Lightweight event driven workflow execution engine.
 Just simply focus on **WorkflowManagementService** and **ExecutionService** for common usage  
 **WorkflowManagementService** is used to manage static workflow definition. Classic methods are like below,    
 createWorkflow, addPhaseToWorkflow, addTransitionToWorkflow, bindTaskToWorkflow  
-**ExecutionService** is used to do operation over workflow such as startWorkflow, doTransition, forceToPhase  
+**ExecutionService** is used to do operation over workflow execution such as startWorkflow, doTransition, forceToPhase  
