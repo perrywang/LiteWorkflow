@@ -5,7 +5,7 @@ Lightweight event driven workflow execution engine.
 
 **Workflow** static workflow definition   
 **Phase** static workflow state representation  
-**Transition** connecting from and to WorkflowPhase with TransitionCondition  
+**Transition** connecting from and to phases with transition condition. There are two types MANUAL, AUTO transitions.  
 **Task** executable unit called by specific event handler at specific workflow lifycycle. Javascript based script  task is default supported. In javascript runtime environment **ActiveRecord** and **ObjectMirror** used to operate POJO object in JVM. **ActiveRecord** is used to operate relex Map\<String, Object> data container. **ObjectMirror** is used to operate strong type java object.  
 **TaskExecutionLifecycle** static enum lifecycle point to define action execution time line such as **WorkflowStarting**, **PhaseEntering**, **PhaseLeft**  
 **Execution** An instance of workflow running  
