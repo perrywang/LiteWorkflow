@@ -23,7 +23,7 @@ public class ScriptTask extends Task {
     @Override
     public boolean execute(ExecutionContext context) {
         ScriptEngine scriptEngine = context.getScriptEngine();
-        scriptEngine.put("record",context.getActiveRecord());
+        scriptEngine.put("context",context);
         try{
             scriptEngine.eval(scripts);
             return true;

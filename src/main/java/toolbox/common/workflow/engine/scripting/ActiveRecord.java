@@ -3,6 +3,7 @@ package toolbox.common.workflow.engine.scripting;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class ActiveRecord extends MapAdapter {
@@ -10,9 +11,7 @@ public class ActiveRecord extends MapAdapter {
     private Map<String,Object> map;
 
     public ActiveRecord(Map<String,Object> m) {
-        if (m == null) {
-            throw new NullPointerException();
-        }
+        Objects.requireNonNull(m);
         this.map = m;
     }
 
@@ -25,12 +24,11 @@ public class ActiveRecord extends MapAdapter {
     }
 
     public void putAll(Map<? extends String, ? extends Object> toMerge) {
-        if (toMerge == null) {
-            throw new NullPointerException("toMerge map is null");
-        }
-        for (Map.Entry<? extends String, ? extends Object> entry : toMerge.entrySet()) {
-            String key = entry.getKey();
-            put(key, entry.getValue());
+        if (toMerge != null) {
+            for (Map.Entry<? extends String, ? extends Object> entry : toMerge.entrySet()) {
+                String key = entry.getKey();
+                put(key, entry.getValue());
+            }
         }
     }
 
