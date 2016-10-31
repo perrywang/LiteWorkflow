@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import toolbox.common.workflow.core.WorkflowPhase;
-import toolbox.common.workflow.entity.PhaseEntity;
-import toolbox.common.workflow.entity.WorkflowEntity;
+import toolbox.common.workflow.entity.Phase;
+import toolbox.common.workflow.entity.Workflow;
 
-public interface PhaseRepository extends JpaRepository<PhaseEntity, Long>{
-    List<WorkflowPhase> findByWorkflow(WorkflowEntity workflow);
+public interface PhaseRepository extends JpaRepository<Phase, Long>{
+    
+    List<Phase> findByWorkflow(Workflow workflow);
+    
+    Phase findByWorkflowAndIsStart(Workflow workflow, boolean isStart);
+    
 }

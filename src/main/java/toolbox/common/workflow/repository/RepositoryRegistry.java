@@ -23,7 +23,10 @@ public class RepositoryRegistry {
     private TransitionRepository transitionRepository;
     
     @Autowired
-    private ActionRepository actionRepository;
+    private TransitionHistoryRepository transitionHistoryRepository;
+    
+    @Autowired
+    private ExecutionRepository executionRepository;
     
     @PostConstruct
     public void initialized() {

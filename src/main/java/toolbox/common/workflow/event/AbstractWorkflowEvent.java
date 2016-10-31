@@ -3,10 +3,10 @@ package toolbox.common.workflow.event;
 import java.time.ZonedDateTime;
 
 import lombok.Data;
-import toolbox.common.workflow.engine.ExecutionContext;
+import toolbox.common.workflow.core.ExecutionContext;
 
 @Data
-public abstract class WorkflowEvent implements Event {
+public abstract class AbstractWorkflowEvent implements Event {
 
     private ZonedDateTime occuredOn = ZonedDateTime.now();
     
@@ -17,7 +17,7 @@ public abstract class WorkflowEvent implements Event {
         return occuredOn;
     }
     
-    public WorkflowEvent(ExecutionContext context) {
+    public AbstractWorkflowEvent(ExecutionContext context) {
         this.context = context;
     }
 

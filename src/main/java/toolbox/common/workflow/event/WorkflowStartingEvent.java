@@ -2,12 +2,12 @@ package toolbox.common.workflow.event;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import toolbox.common.workflow.core.Workflow;
-import toolbox.common.workflow.engine.ExecutionContext;
+import toolbox.common.workflow.core.ExecutionContext;
+import toolbox.common.workflow.entity.Workflow;
 
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class WorkflowStartingEvent extends WorkflowEvent {
+public class WorkflowStartingEvent extends AbstractWorkflowEvent {
     
     private Workflow workflow;
     

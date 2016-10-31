@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import toolbox.common.workflow.core.WorkflowTransition;
-import toolbox.common.workflow.entity.PhaseEntity;
-import toolbox.common.workflow.entity.TransitionEntity;
+import toolbox.common.workflow.entity.Phase;
+import toolbox.common.workflow.entity.Transition;
+import toolbox.common.workflow.entity.Workflow;
 
-public interface TransitionRepository extends JpaRepository<TransitionEntity, Long> {
-    List<WorkflowTransition> findByFrom(PhaseEntity from);
+public interface TransitionRepository extends JpaRepository<Transition, Long> {
+    
+    List<Transition> findByWorkflow(Workflow workflow);
+    
+    List<Transition> findByFrom(Phase from);
 }

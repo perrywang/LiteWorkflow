@@ -6,28 +6,30 @@ import javax.persistence.ManyToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import toolbox.common.workflow.engine.WorkflowExecution;
 
 @Data
 @EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor
 @Entity
-public class ExecutionEntity extends Persistable implements WorkflowExecution {
+public class Execution extends Persistable {
 
     private static final long serialVersionUID = -1214145175194494791L;
     
     @ManyToOne
-    private PhaseEntity currentPhase;
+    private Phase currentPhase;
     
     @ManyToOne
-    private WorkflowEntity workflow;
+    private Workflow workflow;
     
-    public ExecutionEntity(Long id) {
+    @ManyToOne
+    private Execution parent;
+    
+    public Execution(Long id) {
         super(id);
     }
     
-    public ExecutionEntity(WorkflowEntity workflow) {
+    public Execution(Workflow workflow) {
         this.workflow = workflow;
     }
-    
+
 }

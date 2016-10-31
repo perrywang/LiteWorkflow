@@ -6,33 +6,31 @@ import javax.persistence.ManyToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import toolbox.common.workflow.core.ActionLifecycle;
-import toolbox.common.workflow.core.WorkflowAction;
+import toolbox.common.workflow.core.TaskExecutionLifecycle;
 
 @Data
 @EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor
 @Entity
-public class ActionEntity extends DescribableEntity implements WorkflowAction {
+public class TaskBinding extends Persistable {
      
     private static final long serialVersionUID = -7694501520719761660L;
     
     @ManyToOne
-    private WorkflowEntity workflow;
+    private Workflow workflow;
     
     @ManyToOne
-    private PhaseEntity phase;
+    private Phase phase;
     
-    private ActionLifecycle lifecycle;
+    @ManyToOne
+    private Task task;
+    
+    private TaskExecutionLifecycle lifecycle;
     
     private boolean isAsync = false;
     
-    public ActionEntity(Long id) {
+    public TaskBinding(Long id) {
         super(id);
-    }
-    
-    public ActionEntity(String name, String description) {
-        super(name,description);
     }
 
 }
