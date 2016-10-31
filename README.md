@@ -9,7 +9,7 @@ Lightweight event driven workflow execution engine.
 **Task** executable unit called by specific event handler at specific workflow lifycycle.  
 **TaskExecutionLifecycle** static enum lifecycle point to define action execution time line such as **WORKFLOW_STARTING**, **PHASE_ENTERING**  
 **Execution** An instance for workflow running  
-**ExecutionContext** running context to relate data and state transfer between whole execution lifecycle. 
-**Event** workflow execution event such as **WorkflowStartingEvent**, **PhaseEnteringEvent**, **PhaseLeftEvent**, **TransitionStartingEvent**
+**ExecutionContext** running context to relate data and state transfer between whole execution lifecycle.  
+**Event** workflow execution event such as **WorkflowStartingEvent**, **PhaseEnteringEvent**, **PhaseLeftEvent**, **TransitionStartingEvent**  
 **EventBus** event pub sub system to decouple workflow action execution process using Spring ApplicationEventPublisher   
 **ExecutionService** is the driver to trigger event on execution and other tasks such as providing if concurrent execution strategy
