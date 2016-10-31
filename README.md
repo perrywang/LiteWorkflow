@@ -13,3 +13,7 @@ Lightweight event driven workflow execution engine.
 **Event** workflow execution event such as **WorkflowStartingEvent**, **PhaseEnteringEvent**, **PhaseLeftEvent**, **TransitionStartingEvent**  
 **EventBus** event pub sub system to decouple workflow action execution process using Spring ApplicationEventPublisher   
 **ExecutionService** is the driver to trigger event on execution and other tasks such as providing if concurrent execution strategy
+
+## Usage
+**Spring Data JPA** is required  
+Just simply focus on **WorkflowManagementService** and **ExecutionService** for common usage  
