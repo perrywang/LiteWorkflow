@@ -17,3 +17,6 @@ Lightweight event driven workflow execution engine.
 ## Usage
 **Spring Data JPA** is required  
 Just simply focus on **WorkflowManagementService** and **ExecutionService** for common usage  
+**WorkflowManagementService** is used to manage static workflow definition. Classic methods are like below,    
+createWorkflow, addPhaseToWorkflow, addTransitionToWorkflow, bindTaskToWorkflow  
+**ExecutionService** is used to do operation over workflow such as startWorkflow, doTransition, forceToPhase  
