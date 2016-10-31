@@ -4,10 +4,9 @@ Lightweight event driven workflow execution engine.
 ## Core concepts  
 
 **Workflow** static workflow definition   
-**Phase** static workflow state representation 
+**Phase** static workflow state representation  
 **Transition** connecting from and to WorkflowPhase with TransitionCondition  
-**Task** executable unit called by specific event handler at specific workflow lifycycle.
-
+**Task** executable unit called by specific event handler at specific workflow lifycycle.  
 **TaskExecutionLifecycle** static enum lifecycle point to define action execution time line such as **WORKFLOW_STARTING**, **PHASE_ENTERING**  
 **Execution** An instance for workflow running  
 **ExecutionContext** running context to relate data and state transfer between whole execution lifecycle. 
