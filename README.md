@@ -7,7 +7,7 @@ Lightweight event driven workflow execution engine.
 **Phase** static workflow state representation  
 **Transition** connecting from and to WorkflowPhase with TransitionCondition  
 **Task** executable unit called by specific event handler at specific workflow lifycycle.  
-**TaskExecutionLifecycle** static enum lifecycle point to define action execution time line such as **WORKFLOW_STARTING**, **PHASE_ENTERING**  
+**TaskExecutionLifecycle** static enum lifecycle point to define action execution time line such as **WorkflowStarting**, **PhaseEntering**, **PhaseLeft**  
 **Execution** An instance for workflow running  
 **ExecutionContext** running context to relate data and state transfer between whole execution lifecycle.  
 **Event** workflow execution event such as **WorkflowStartingEvent**, **PhaseEnteringEvent**, **PhaseLeftEvent**, **TransitionStartingEvent**  
