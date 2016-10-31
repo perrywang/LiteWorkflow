@@ -9,7 +9,7 @@ import toolbox.common.workflow.entity.Execution;
 import toolbox.common.workflow.entity.Phase;
 import toolbox.common.workflow.entity.Transition;
 import toolbox.common.workflow.entity.Workflow;
-import toolbox.common.workflow.event.TransitingStartingEvent;
+import toolbox.common.workflow.event.TransitionStartingEvent;
 import toolbox.common.workflow.event.WorkflowStartingEvent;
 import toolbox.common.workflow.repository.ExecutionRepository;
 
@@ -31,7 +31,7 @@ public class ExecutionServiceImpl implements ExecutionService{
 
     @Override
     public void doTransition(Execution execution, Transition transition, ExecutionContext context) {
-        TransitingStartingEvent event = new TransitingStartingEvent(context, transition.getFrom(), transition.getTo());
+        TransitionStartingEvent event = new TransitionStartingEvent(context, transition.getFrom(), transition.getTo());
         eventPublisher.publishEvent(event);
     }
     

@@ -67,7 +67,7 @@ public class EventSubcriber {
         
         for(Transition transition: transitions){
             if(context.evaluateCondition(transition.getConditionExpression())){
-                TransitingStartingEvent transitingEvent = new TransitingStartingEvent(context,transition.getFrom(),transition.getTo());
+                TransitionStartingEvent transitingEvent = new TransitionStartingEvent(context,transition.getFrom(),transition.getTo());
                 eventPublisher.publishEvent(transitingEvent);
             }
         }
@@ -84,7 +84,7 @@ public class EventSubcriber {
     }
     
     @EventListener
-    public void onTransitingStarting(TransitingStartingEvent event) {
+    public void onTransitionStarting(TransitionStartingEvent event) {
         ExecutionContext context = event.getContext();
         Execution execution = context.getExecution();
         Phase from = event.getFrom();
@@ -93,11 +93,11 @@ public class EventSubcriber {
         eventPublisher.publishEvent(phaseLeftEvent);
         PhaseEnteringEvent phaseEnteringEvent = new PhaseEnteringEvent(context,to);
         eventPublisher.publishEvent(phaseEnteringEvent);
-        eventPublisher.publishEvent(new TransitingFinishedEvent(execution,from,to));
+        eventPublisher.publishEvent(new TransitionFinishedEvent(execution,from,to));
     }
     
     @EventListener
-    public void onTransitingFinished(TransitingFinishedEvent event) {
+    public void onTransitionFinished(TransitionFinishedEvent event) {
         Execution execution = event.getExecution();
         Phase from = event.getFrom();
         Phase to = event.getTo();

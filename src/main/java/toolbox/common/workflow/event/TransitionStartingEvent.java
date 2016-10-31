@@ -7,13 +7,13 @@ import toolbox.common.workflow.entity.Phase;
 
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class TransitingStartingEvent extends AbstractWorkflowEvent{
+public class TransitionStartingEvent extends AbstractWorkflowEvent{
     
     private Phase from;
     
     private Phase to;
     
-    public TransitingStartingEvent(ExecutionContext context, Phase from, Phase to) {
+    public TransitionStartingEvent(ExecutionContext context, Phase from, Phase to) {
         super(context);
         this.from = from;
         this.to = to;
